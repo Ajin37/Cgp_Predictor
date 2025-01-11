@@ -33,7 +33,7 @@ class CpGPredictor(torch.nn.Module):
 @st.cache_resource  # Cache the loaded model to avoid reloading on every interaction
 def load_model():
     model = CpGPredictor(input_size=5, hidden_size=64, num_layers=2, output_size=1)
-    model.load_state_dict(torch.load(r"C:\Users\APJ\OneDrive\Desktop\machine_task\cpg_predictor.pth", map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load("cpg_predictor.pth", map_location=torch.device('cpu')))
     model.eval()
     return model
 
